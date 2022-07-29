@@ -153,8 +153,8 @@ def upload_from_file_to_gcs(file_to_upload=None,
     Examples:
     >>> upload_from_file_to_gcs(file_to_upload='sample_images/6201599.jpeg',
                                 bucket_client=storage_client,
-                                bucket_name='image-tagging-resources-eu',
-                                version_prefix='temp/11/imgs_train')
+                                bucket_name='image-bucket',
+                                version_prefix='temp/imgs_train')
     """
 
     file_name = file_to_upload.split('/')[-1]
