@@ -19,6 +19,7 @@ def split_train_valid_test_custom(df: pd.DataFrame = None,
                                   random_seed: int = 2481):
     """
     Create custom train/valid or train/valid/test splits from a dataframe.
+
     :param df: Dataframe to split, defaults to None
     :param x_col: Features columns to include in the resulting dataframe beside the tag column., defaults to ['image_id', 'image']
     :param y_col: Column including the label (used to stratify the splits, i.e. have equal percentage per label), defaults to 'tag'
@@ -100,6 +101,7 @@ def create_new_data_version_gcs(df_new=None,
                                 version_prefix='temp'):
     """
     Create a CSV from the given `df_new` under a new version in GCS. 
+
     :param df_new: Dataframe including data for the new version, defaults to None.
     :param type: Data type `train_valid` or `test` to, defaults to None.
     :param bucket: GCS bucket, defaults to 'gs://image-bucket'.
@@ -144,7 +146,8 @@ def upload_from_file_to_gcs(file_to_upload=None,
                             bucket_name=None,
                             version_prefix=None):
     """
-    Upload a single file to GCS bucket 
+    Upload a single file to GCS bucket.
+
     :param file_to_upload: file to upload, defaults to None
     :param bucket_client: storage client (retrieved bucket from `storage_client.get_bucket(BUCKET_NAME)`), defaults to None
     :param bucket_name:bucket name , defaults to None
@@ -169,7 +172,7 @@ def upload_from_dir_to_gcs(local_dir=None,
                            bucket_name=None,
                            version_prefix=None):
     """
-    Upload all files in `local_dir` to gcs bucket `bucket_name` under prefix `version_prefix`
+    Upload all files in `local_dir` to gcs bucket `bucket_name` under prefix `version_prefix`.
 
     :param local_dir: local directory including files to upload, defaults to None
     :param storage_client: storage client, defaults to None
@@ -198,7 +201,7 @@ def upload_from_file_to_gcs_concurrent(local_dir=None,
                                        bucket_name=None,
                                        prefix=None):
     """
-    Upload all files in `local_dir` to gcs bucket `bucket_name` under prefix `version_prefix`
+    Upload all files in `local_dir` to gcs bucket `bucket_name` under prefix `version_prefix`.
 
     :param local_dir: local directory including files to upload, defaults to None
     :param storage_client: storage client, defaults to None
